@@ -50,3 +50,29 @@ Why do we need React?
 
 	Provides a better user experience with smooth updates without page reloads.
 ---
+
+1/09/2025
+
+	react styleing
+		inline
+		external file
+		external module file
+		index & app for global styleing
+
+	## props -- drilling data to another Component
+
+	## usestate
+
+		usestate is a react hook that allows you to add stste (data that can change over time)
+		to a functional components
+		normally ,in js functions,varables disappear after the function runs
+		.but in react with usestate ,react remember values between re-rendering
+
+		const [state,setstate]=usestate(initial value)
+
+		state--the current value
+		setstate-- a function that updates the state
+		initial value= starting value 
+
+	## ternary operator
+	 	logical condition ? true :false
