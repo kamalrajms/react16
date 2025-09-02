@@ -4,10 +4,19 @@ export default function UsestateComponent() {
   const [count, setCount] = useState(100000);
   const [name, setname] = useState("praveen");
   const [loggedin, setLoggedin] = useState(false);
-  //   const [dark, setdark] = useState(false);
+  const [dark, setdark] = useState(false);
   console.log(loggedin);
 
   console.log(name);
+  const fruits = ["apple", "banana", "Mango"];
+
+  const user = [
+    { id: 1, name: "john" },
+    { id: 2, name: "Emma" },
+    { id: 3, name: "raj" },
+  ];
+
+  const student = ["alice", "raj", "kishore"];
 
   return (
     <div>
@@ -32,6 +41,46 @@ export default function UsestateComponent() {
       <button onClick={() => setLoggedin(!loggedin)}>
         {loggedin ? <>sign out</> : <>sign in</>}
       </button>
+      {/* logical operator */}
+      {loggedin && <p>hello kishore</p>}
+
+      {/* list rendering */}
+
+      <ul>
+        {fruits.map((e, ind) => (
+          <li key={ind}>{e}</li>
+        ))}
+      </ul>
+      <ul>
+        {user.map((user) => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
+
+      <div>
+        {student.length > 0 ? (
+          <ul>
+            {student.map((name, ind) => (
+              <li key={ind}>{name}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>no student is found</p>
+        )}
+      </div>
+      {/* dark mode */}
+      <div
+        style={{
+          backgroundColor: dark ? "#333" : "#fff",
+          color: dark ? "#fff" : "#333",
+          padding: "30px",
+        }}
+      >
+        <button onClick={() => setdark(!dark)}>
+          switch to {dark ? "dark" : "Light"}mode
+        </button>
+        <p>you are in {dark ? "Light" : "dark"}</p>
+      </div>
     </div>
   );
 }

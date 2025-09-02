@@ -61,7 +61,7 @@ Why do we need React?
 
 	## props -- drilling data to another Component
 
-	## usestate
+	## usestate()
 
 		usestate is a react hook that allows you to add stste (data that can change over time)
 		to a functional components
@@ -74,5 +74,33 @@ Why do we need React?
 		setstate-- a function that updates the state
 		initial value= starting value 
 
-	## ternary operator
-	 	logical condition ? true :false
+	## conditional rendering & list rendering
+
+		conditional rendering
+			it means showing or hiding parts ofUI based on some 
+			condition (state,props...)
+
+
+			1)ternary operator
+				logical condition ? true :false
+			2)logical operator && || !
+		
+		list rendering 
+			rendering multiple items dynamically using .map()
+
+	## useEffect()
+
+		useEffect is hook that lets you perform side effect in functional 
+		components.
+		side effects are the task that happend outside the normal react 
+		rendering process,like:
+
+				fetching data from API 
+				Setting up subscription (event listerners)
+				updateing the browser DOM manually
+				starting /stopping timers
+
+
+			useEffect(()=>{
+				//code
+			},[dependencies])
