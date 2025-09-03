@@ -104,3 +104,14 @@ Why do we need React?
 			useEffect(()=>{
 				//code
 			},[dependencies])
+
+	## useRef()
+
+		it is a react hook that gives you a box(.current) you can store
+		anything in like num,str,int,object,array,function...
+
+		that value persists between rendering
+
+		updateinng it does not cause your compoment to re-rendering
+		 
+		{current.value}
