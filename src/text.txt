@@ -115,3 +115,14 @@ Why do we need React?
 		updateinng it does not cause your compoment to re-rendering
 		 
 		{current.value}
+
+	## useContext
+
+		1)passing data from a parent compoment down to deeply nested child compoment is annoying
+		2)normally you'd have to pass props manually each level (callinf props)
+		3)useContext lets you skip all middle components and share data directly
+
+			3 steps 
+				create a context
+				provider a value
+				consume the value
