@@ -126,3 +126,17 @@ Why do we need React?
 				create a context
 				provider a value
 				consume the value
+
+	## useReducer()
+
+		const [state,dispatch]=useReducer(reducerFunction,initalvalue)
+
+		state = current value (like usestate)
+		dispatch= a function to tell the reducer what to do
+		reducerFunction(state,action) = the logic that return a new state
+		initalvalue = starting value
+
+	## callback
+	## Routing DOM
+	## useNavigate
+	## useParams
