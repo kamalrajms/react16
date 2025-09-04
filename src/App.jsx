@@ -1,16 +1,15 @@
-import React from "react";
-import UseEffectHook from "./component/UseEffectHook";
-import Timer from "./component/Timer";
-import AIPuseEffect from "./component/AIPuseEffect";
-import UseRefhooh from "./component/UseRefhooh";
+import React, { useContext, createContext } from "react";
+import First from "./component/First";
+
+export const Pass = createContext();
 
 export default function App() {
+  const num = "number";
   return (
     <div>
-      <UseEffectHook />
-      <Timer />
-      <AIPuseEffect />
-      <UseRefhooh />
+      <Pass.Provider value={num}>
+        <First />
+      </Pass.Provider>
     </div>
   );
 }
