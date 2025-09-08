@@ -162,6 +162,14 @@ Why do we need React?
 			control over navigation without server request
 
 		npm install react-route-dom
+
+			<BrowserRouter>
+      		<Routes>
+        		<Route/>
+			</Routes>
+			</BrowserRouter>
+
+		## nested Routing
 	
 	## useNavigate
 	## useParams
