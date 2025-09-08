@@ -136,7 +136,32 @@ Why do we need React?
 		reducerFunction(state,action) = the logic that return a new state
 		initalvalue = starting value
 
-	## callback
+	## Usecallback
+
+		it's a react hook ,Every time a Component re-rendering
+		it creates a brand new copy of every function inside it.
+
+		even if the function code looks exactly the same
+
+			1) unnecessarly child re-renders
+			2) useEffect developers issues
+
+		const varablesName= Usecallback(()=>{
+			//code
+		},[])
+
 	## Routing DOM
+
+		Routing means navigating b/w different pages in a web app without refreshing
+		the browser in traditional websites ,clicking a link reloads the whole page
+
+		in react (SAP) ,routing lets us changes the view without reloading
+		 uses
+		 	better performances
+			smooth user experiancte
+			control over navigation without server request
+
+		npm install react-route-dom
+	
 	## useNavigate
 	## useParams

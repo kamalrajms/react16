@@ -1,38 +1,28 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useCallback } from "react";
+import List from "./component/List";
+import { preinit } from "react-dom";
 
 export default function App() {
-  // const [count, setcount] = useState(0);
+  const [number, setNumber] = useState(1);
+  const [dark, setDark] = useState(false);
 
-  const intialvalue = { count: 0 };
+  const getItems = useCallback(() => {
+    return [number, number + 1, number + 2];
+  }, [number]);
 
-  function reducer(state, action) {
-    switch (action.type) {
-      case "inc":
-        return { count: state.count + 1 };
-      case "dec":
-        return { count: state.count - 1 };
-      case "reset":
-        return { count: 0 };
-      default:
-        return state;
-    }
-  }
-
-  const [state, dispatch] = useReducer(reducer, intialvalue);
+  const theme = {
+    backgroundColor: dark ? "#333" : "#fff",
+    color: dark ? "#fff" : "#333",
+  };
   return (
-    <div>
-      {/* <h2>count :{count}</h2>
-      <button onClick={() => setcount(count + 1)}>inc</button>
-      <br />
-      <button onClick={() => setcount(count - 1)}>dec</button>
-      <br />
-      <button onClick={() => setcount(0)}>rest</button> */}
-      <h2>count :{state.count}</h2>
-      <button onClick={() => dispatch({ type: "inc" })}>inc</button>
-      <br />
-      <button onClick={() => dispatch({ type: "dec" })}>dec</button>
-      <br />
-      <button onClick={() => dispatch({ type: "reset" })}>rest</button>
+    <div style={theme}>
+      <input
+        type="number"
+        value={number}
+        onChange={(e) => setNumber(parseInt(e.target.value))}
+      />
+      <button onClick={() => setDark((prev) => !prev)}>toggle theme</button>
+      <List getItems={getItems} />
     </div>
   );
 }
