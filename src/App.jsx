@@ -7,6 +7,7 @@ import Contact from "./component/Contact";
 import Head from "./component/Head";
 import Web from "./component/Web";
 import Appdevelopment from "./component/Appdevelopment";
+import BlogDetail from "./component/BlogDetail";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
             <Route path="App" element={<Appdevelopment />} />
           </Route>
           <Route path="/contact" element={<Contact />} />
+          <Route path="/BlogDetail/:id" element={<BlogDetail />} />
         </Routes>
       </BrowserRouter>
     </div>
