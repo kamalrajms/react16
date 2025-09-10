@@ -1,30 +1,41 @@
-import React from "react";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import Home from "./component/Home";
-import About from "./component/About";
-import Service from "./component/Service";
-import Contact from "./component/Contact";
-import Head from "./component/Head";
-import Web from "./component/Web";
-import Appdevelopment from "./component/Appdevelopment";
-import BlogDetail from "./component/BlogDetail";
+import React, { useState } from "react";
+import Square from "./component/Square";
 
 export default function App() {
+  const [xIsNext, setXIsNext] = useState(true);
+  const [squares, setSquares] = useState(Array(9).fill(null));
+
+  function handleClick(i) {
+    if (squares[i]) {
+      return;
+    }
+    const nextSquares = squares.slice();
+    if (xIsNext) {
+      nextSquares[i] = "X";
+    } else {
+      nextSquares[i] = "O";
+    }
+    setSquares(nextSquares);
+    setXIsNext(!xIsNext);
+  }
+
   return (
-    <div>
-      <BrowserRouter>
-        <Head />
-        <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/" element={<About />} />
-          <Route path="/service" element={<Service />}>
-            <Route path="" element={<Web />} />
-            <Route path="App" element={<Appdevelopment />} />
-          </Route>
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/BlogDetail/:id" element={<BlogDetail />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <>
+      <div className="board-row">
+        <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+        <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
+        <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+      </div>
+      <div className="board-row">
+        <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
+        <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
+        <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+      </div>
+      <div className="board-row">
+        <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
+        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
+        <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+      </div>
+    </>
   );
 }

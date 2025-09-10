@@ -116,7 +116,7 @@ Why do we need React?
 		 
 		{current.value}
 
-	## useContext
+	## useContext()
 
 		1)passing data from a parent compoment down to deeply nested child compoment is annoying
 		2)normally you'd have to pass props manually each level (callinf props)
